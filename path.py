@@ -1,17 +1,18 @@
-from scipy.sparse.csgraph import shortest_path
 import networkx as nx
 
-
 class Path:
-    def __init__(self, locations, heading_samples, distance_dict, T_max):
+    def __init__(self, permutation, locations, heading_samples, distance_dict, search_graph, T_max):
+        self.permutation = permutation
         self.locations = locations
-        #self.reward = self.get_reward()
+        self.reward = self.get_reward()
         self.heading_samples = heading_samples
         self.distance_dict = distance_dict
+        self.search_graph = search_graph
         self.optimal_headings = self.calculate_optimal_headings()
         self.distance = self.get_distance()
         self.T_max = T_max
         self.is_feasible = self.distance <= self.T_max
+
 
     def add_new_locations(self, locations_to_add):
         """Adds locations iteratively in order of decreasing added reward per added distance"""
@@ -24,11 +25,15 @@ class Path:
                 # Create new path path1 with location_to_add at given index
                 locations1 = self.locations.copy()
                 locations1.insert(index, location_to_add)
-                path1 = Path(locations=locations1,
+                permutation1 = self.permutation.copy()
+                permutation1.remove(location_to_add.idy)
+                permutation1.insert(index, location_to_add.idy)
+                path1 = Path(permutation=permutation1,
+                             locations=locations1,
                              heading_samples=self.heading_samples,
                              distance_dict=self.distance_dict,
                              T_max=self.T_max)
-                reward_per_distance_added1 = (path1.get_reward() - self.get_reward())/(path1.get_distance() - self.get_distance())
+                reward_per_distance_added1 = (path1.reward - self.reward)/(path1.distance - self.distance)
                 if (reward_per_distance_added1 > current_reward_per_distance_added) & path1.is_feasible:
                     current_reward_per_distance_added = reward_per_distance_added1
                     current_best_path = path1
@@ -36,7 +41,7 @@ class Path:
                     continue
         if best_location_to_add is not None:
             locations_to_add.remove(best_location_to_add)
-            print(str(best_location_to_add.idy) + " removed")
+            print(str(best_location_to_add.idy) + " added")
             print("new locations_to_add" + str([la.idy for la in locations_to_add]))
             if len(locations_to_add) >= 1:
                 current_best_path = current_best_path.add_new_locations(locations_to_add)
@@ -59,7 +64,8 @@ class Path:
         return distance
 
     def calculate_optimal_headings(self):
-        G = self.generate_search_graph()
+        #G = self.generate_search_graph()
+        G = self.search_graph
         shortest_path_in_g = nx.shortest_path(G,
                                               source="start",
                                               target="end",
@@ -101,6 +107,7 @@ class Path:
                        v_of_edge="end",
                        weight=0)
         return G
+
 
 
 
