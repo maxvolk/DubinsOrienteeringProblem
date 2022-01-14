@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Seminararbeit_DubinsOrienteeringProblem.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: plainurl.bst
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: Literatur.bib
+Warning--empty publisher in K.Savla.2005
+Warning--empty year in K.Savla.2005
+You've used 23 entries,
+            2882 wiz_defined-function locations,
+            795 strings with 9405 characters,
+and the built_in function-call counts, 11307 in all, are:
+= -- 1190
+> -- 414
+< -- 4
++ -- 154
+- -- 123
+* -- 723
+:= -- 1592
+add.period$ -- 85
+call.type$ -- 23
+change.case$ -- 126
+chr.to.int$ -- 0
+cite$ -- 25
+duplicate$ -- 298
+empty$ -- 1053
+format.name$ -- 123
+if$ -- 2884
+int.to.chr$ -- 0
+int.to.str$ -- 23
+missing$ -- 23
+newline$ -- 133
+num.names$ -- 49
+pop$ -- 230
+preamble$ -- 1
+purify$ -- 105
+quote$ -- 0
+skip$ -- 748
+stack$ -- 0
+substring$ -- 601
+swap$ -- 91
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 86
+warning$ -- 2
+while$ -- 86
+width$ -- 25
+write$ -- 283
+(There were 2 warnings)

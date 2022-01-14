@@ -1,0 +1,168 @@
+\begin{thebibliography}{10}
+
+\bibitem{AtsushiSakai.2018}
+{Atsushi Sakai}, {Daniel Ingram}, {Joseph Dinius}, {Karan Chawla}, {Antonin
+  Raffin}, and {Alexis Paques}.
+\newblock Pythonrobotics: a python code collection of robotics algorithms,
+  2018.
+
+\bibitem{Chao.1996b}
+I-Ming Chao, Bruce~L. Golden, and Edward~A. Wasil.
+\newblock A fast and effective heuristic for the orienteering problem.
+\newblock {\em European Journal of Operational Research}, 88(3):475--489, 1996.
+\newblock \href {https://doi.org/10.1016/0377-2217(95)00035-6}
+  {\path{doi:10.1016/0377-2217(95)00035-6}}.
+
+\bibitem{Chao.1996}
+I-Ming Chao, Bruce~L. Golden, and Edward~A. Wasil.
+\newblock The team orienteering problem.
+\newblock {\em European Journal of Operational Research}, 88(3):464--474, 1996.
+\newblock \href {https://doi.org/10.1016/0377-2217(94)00289-4}
+  {\path{doi:10.1016/0377-2217(94)00289-4}}.
+
+\bibitem{Dubins.1957}
+Lester~Eli Dubins.
+\newblock On curves of minimal length with a constraint on average curvature,
+  and with prescribed initial and terminal positions and tangents.
+\newblock {\em American Journal of Mathematics}, 79(3):497--516, 1957.
+\newblock \href {https://doi.org/10.2307/2372560} {\path{doi:10.2307/2372560}}.
+
+\bibitem{Fischetti.1998}
+Matteo Fischetti, Juan Jos{\'e}~Salazar Gonz{\'a}lez, and Paolo Toth.
+\newblock Solving the orienteering problem through branch-and-cut.
+\newblock {\em INFORMS Journal on Computing}, 10(2):133--148, 1998.
+\newblock \href {https://doi.org/10.1287/ijoc.10.2.133}
+  {\path{doi:10.1287/ijoc.10.2.133}}.
+
+\bibitem{Gendreau.1998}
+Michel Gendreau, Gilbert Laporte, and Fr{\'e}d{\'e}ric Semet.
+\newblock A tabu search heuristic for the undirected selective travelling
+  salesman problem.
+\newblock {\em European Journal of Operational Research}, 106(2):539--545,
+  1998.
+\newblock \href {https://doi.org/10.1016/S0377-2217(97)00289-0}
+  {\path{doi:10.1016/S0377-2217(97)00289-0}}.
+
+\bibitem{Golden.1987}
+Bruce~L. Golden, Larry Levy, and Rakesh Vohra.
+\newblock The orienteering problem.
+\newblock {\em Naval Research Logistics (NRL)}, 34(3):307--318, 1987.
+
+\bibitem{Gunawan.2016}
+Aldy Gunawan, Hoong~Chuin Lau, and Pieter Vansteenwegen.
+\newblock Orienteering problem: A survey of recent variants, solution
+  approaches and applications.
+\newblock {\em European Journal of Operational Research}, 255(2):315--332,
+  2016.
+\newblock \href {https://doi.org/10.1016/j.ejor.2016.04.059}
+  {\path{doi:10.1016/j.ejor.2016.04.059}}.
+
+\bibitem{Hansen.2001}
+Pierre Hansen and Nenad Mladenovi{\'c}.
+\newblock Variable neighborhood search: Principles and applications.
+\newblock {\em European Journal of Operational Research}, 130(3):449--467,
+  2001.
+\newblock \href {https://doi.org/10.1016/S0377-2217(00)00100-4}
+  {\path{doi:10.1016/S0377-2217(00)00100-4}}.
+
+\bibitem{K.Savla.2005}
+{Ketan Savla}, {Emilio Frazzoli}, and {Francesco Bullo}.
+\newblock On the point-to-point and traveling salesperson problems for dubins'
+  vehicle.
+\newblock In {\em Proceedings of the 2005 American Control Conference}, pages
+  786--791 vol. 2.
+\newblock \href {https://doi.org/10.1109/ACC.2005.1470055}
+  {\path{doi:10.1109/ACC.2005.1470055}}.
+
+\bibitem{Kobeaga.2018}
+Gorka Kobeaga, Mar{\'i}a Merino, and Jose~A. Lozano.
+\newblock An efficient evolutionary algorithm for the orienteering problem.
+\newblock {\em Computers {\&} Operations Research}, 90:42--59, 2018.
+\newblock \href {https://doi.org/10.1016/j.cor.2017.09.003}
+  {\path{doi:10.1016/j.cor.2017.09.003}}.
+
+\bibitem{LaValle.2006}
+Steven~M. LaValle.
+\newblock {\em Planning algorithms}.
+\newblock {Cambridge university press}, 2006.
+
+\bibitem{Nickel.2014}
+Stefan Nickel, Oliver Stein, and Karl-Heinz Waldmann.
+\newblock {\em Operations Research}.
+\newblock Springer, Heidelberg, 2. edition, 2014.
+
+\bibitem{Ramesh.1991}
+R.~Ramesh and Kathleen~M. Brown.
+\newblock An efficient four-phase heuristic for the generalized orienteering
+  problem.
+\newblock {\em Computers {\&} Operations Research}, 18(2):151--165, 1991.
+\newblock \href {https://doi.org/10.1016/0305-0548(91)90086-7}
+  {\path{doi:10.1016/0305-0548(91)90086-7}}.
+
+\bibitem{R.Penicka.2017}
+{Robert P{\v{e}}ni{\v{c}}ka}, {Jan Faigl}, {Petr V{\'a}{\v{n}}a}, and {Martin
+  Saska}.
+\newblock Dubins orienteering problem.
+\newblock {\em IEEE Robotics and Automation Letters}, 2(2):1210--1217, 2017.
+\newblock \href {https://doi.org/10.1109/LRA.2017.2666261}
+  {\path{doi:10.1109/LRA.2017.2666261}}.
+
+\bibitem{R.Penicka.2017b}
+{Robert P{\v{e}}ni{\v{c}}ka}, {Jan Faigl}, {Petr V{\'a}{\v{n}}a}, and {Martin
+  Saska}.
+\newblock Dubins orienteering problem with neighborhoods.
+\newblock In {\em 2017 International Conference on Unmanned Aircraft Systems
+  (ICUAS)}, pages 1555--1562, 2017.
+\newblock \href {https://doi.org/10.1109/ICUAS.2017.7991350}
+  {\path{doi:10.1109/ICUAS.2017.7991350}}.
+
+\bibitem{Santini.2019}
+Alberto Santini.
+\newblock An adaptive large neighbourhood search algorithm for the orienteering
+  problem.
+\newblock {\em Expert Systems with Applications}, 123:154--167, 2019.
+\newblock \href {https://doi.org/10.1016/j.eswa.2018.12.050}
+  {\path{doi:10.1016/j.eswa.2018.12.050}}.
+
+\bibitem{Sevkli.2006}
+Z{\"u}lal Sevkli and F.~Erdo{\u{g}}an Sevilgen.
+\newblock Variable neighborhood search for the orienteering problem.
+\newblock In Albert Levi, Erkay Sava{\c{s}}, H{\"u}sn{\"u} Yenig{\"u}n, Selim
+  Balc{\i}soy, and Y{\"u}cel Sayg{\i}n, editors, {\em Computer and Information
+  Sciences -- ISCIS 2006}, pages 134--143, Berlin, Heidelberg, 2006. {Springer
+  Berlin Heidelberg}.
+
+\bibitem{Z.Sevkli.2010}
+Z{\"u}lal Sevkli and F.~Erdo{\u{g}}an Sevilgen.
+\newblock Discrete particle swarm optimization for the orienteering problem.
+\newblock In {\em IEEE Congress on Evolutionary Computation}, pages 1--8, 2010.
+\newblock \href {https://doi.org/10.1109/CEC.2010.5586532}
+  {\path{doi:10.1109/CEC.2010.5586532}}.
+
+\bibitem{Peixoto.2022}
+{Tiago P. Peixoto}.
+\newblock Graph-tool performance comparison.
+\newblock URL: \url{https://graph-tool.skewed.de/performance}.
+
+\bibitem{Tsiligirides.1984}
+Theodore Tsiligirides.
+\newblock Heuristic methods applied to orienteering.
+\newblock {\em Journal of the Operational Research Society}, 35(9):797--809,
+  1984.
+\newblock \href {https://doi.org/10.1057/jors.1984.162}
+  {\path{doi:10.1057/jors.1984.162}}.
+
+\bibitem{Vansteenwegen.2019}
+Pieter Vansteenwegen and Aldy Gunawan, editors.
+\newblock {\em Orienteering Problems: Models and Algorithms for Vehicle Routing
+  Problems with Profits}.
+\newblock {Springer International Publishing}, Cham, 2019.
+
+\bibitem{Vansteenwegen.2011}
+Pieter Vansteenwegen, Wouter Souffriau, and Dirk {van Oudheusden}.
+\newblock The orienteering problem: A survey.
+\newblock {\em European Journal of Operational Research}, 209(1):1--10, 2011.
+\newblock \href {https://doi.org/10.1016/j.ejor.2010.03.045}
+  {\path{doi:10.1016/j.ejor.2010.03.045}}.
+
+\end{thebibliography}
