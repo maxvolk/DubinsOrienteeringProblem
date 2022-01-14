@@ -1,13 +1,13 @@
 import networkx as nx
 
 class Path:
-    def __init__(self, permutation, locations, heading_samples, distance_dict, search_graph, T_max):
+    def __init__(self, permutation, locations, heading_samples, distance_dict, T_max):  # search_graph,
         self.permutation = permutation
         self.locations = locations
         self.reward = self.get_reward()
         self.heading_samples = heading_samples
         self.distance_dict = distance_dict
-        self.search_graph = search_graph
+        #self.search_graph = search_graph
         self.optimal_headings = self.calculate_optimal_headings()
         self.distance = self.get_distance()
         self.T_max = T_max
@@ -42,7 +42,7 @@ class Path:
         if best_location_to_add is not None:
             locations_to_add.remove(best_location_to_add)
             print(str(best_location_to_add.idy) + " added")
-            print("new locations_to_add" + str([la.idy for la in locations_to_add]))
+            # print("new locations_to_add" + str([la.idy for la in locations_to_add]))
             if len(locations_to_add) >= 1:
                 current_best_path = current_best_path.add_new_locations(locations_to_add)
         return current_best_path
@@ -64,8 +64,8 @@ class Path:
         return distance
 
     def calculate_optimal_headings(self):
-        #G = self.generate_search_graph()
-        G = self.search_graph
+        G = self.generate_search_graph()
+        # G = self.search_graph
         shortest_path_in_g = nx.shortest_path(G,
                                               source="start",
                                               target="end",

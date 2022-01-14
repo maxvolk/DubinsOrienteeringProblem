@@ -49,8 +49,9 @@ def generate_cutpoints(list_to_cut, number_of_cutpoints):
 
 
 class VNS:
-    def __init__(self, T_max, curvature, stepsize, target_locations_df, m, l_max=2, start_idy=0, end_idy=0):
+    def __init__(self, T_max, T_initial, curvature, stepsize, target_locations_df, m, l_max=2, start_idy=0, end_idy=0):
         self.T_max = T_max
+        self.T_initial = T_initial
         self.curvature = curvature
         self.stepsize = stepsize
         self.target_locations = target_locations_from_df(target_locations_df)
@@ -66,32 +67,37 @@ class VNS:
                                                 locations=self.target_locations,
                                                 headings=self.heading_samples)
 
-    def variable_neighborhood_search(self, number_of_iterations):
+    def variable_neighborhood_search(self, number_of_iterations, consider_all_angles, only_initial_solution):
         print("Calculating reachable locations")
-        reachable_locations = self.get_reachable_locations()
+        reachable_locations = self.get_reachable_locations(consider_all_angles=consider_all_angles)
         print("Creating initial path")
         path = self.create_initial_path(reachable_locations)
         print(f"Initial path with reward {path.reward} and distance {path.distance} built")
-        iteration = 1
-        while not iteration >= number_of_iterations:
-            l = 1
-            while l <= self.l_max:
-                path1 = self.shake(path, l)
-                path2 = self.local_search(path1, l)
-                if path2.distance <= self.T_max & path2.reward >= path.reward:
-                    path = path2
-                    l = 1
-                else:
-                    l = l + 1
-            iteration = iteration + 1
-            print(f"Iteration {iteration}, Current best path (Reward: {path.reward}, Distance: {path.distance})")
+        if not only_initial_solution:
+            iteration = 1
+            while not iteration >= number_of_iterations:
+                l = 1
+                while l <= self.l_max:
+                    path1 = self.shake(path, l)
+                    path2 = self.local_search(path1, l)
+                    if path2.distance <= self.T_max & path2.reward > path.reward:
+                        path = path2
+                        l = 1
+                    else:
+                        if path2.distance > self.T_max:
+                            print("Path2 > T")
+                        if path2.reward < path.reward:
+                            print("Path2 < R")
+                        l = l + 1
+                iteration = iteration + 1
+                print(f"Iteration {iteration}, Current best path (Reward: {path.reward}, Distance: {path.distance})")
         print([location.idy for location in path.locations])
         return path
 
-    def get_reachable_locations(self):
+    def get_reachable_locations(self, consider_all_angles=True):
         """qi ∈ Sr ⇔ (Ld(q1,qi)+ Ld(qi,qn )) ≤ Tmax for any combination of sampled heading angles (θ1,θi,θn ).
         This selects all target locations that are reachable by the Dubins vehicle within the travel budget"""
-        reachable_locations = []
+        reachable_locations = [] #self.target_locations.copy()
         start_location = next((location for location in self.target_locations if location.idy == self.start_idy), None)
         end_location = next((location for location in self.target_locations if location.idy == self.end_idy), None)
         reachable_locations.append(start_location)
@@ -100,15 +106,20 @@ class VNS:
             if location.idy in [start_location.idy, end_location.idy]:
                 continue
             else:
-                reachable = True
+                if consider_all_angles:
+                    reachable = True
+                else:
+                    reachable = False
                 for start_heading in self.heading_samples:
                     for heading in self.heading_samples:
                         for end_heading in self.heading_samples:
                             L_1 = self.distance_dict.get_distance(start_location, start_heading, location, heading)
                             L_2 = self.distance_dict.get_distance(location, heading, end_location, end_heading)
                             L = L_1 + L_2
-                            if L > self.T_max:
+                            if (L > self.T_max) & consider_all_angles:
                                 reachable = False
+                            elif (L <= self.T_max) & (not consider_all_angles):
+                                reachable = True
                 if reachable:
                     reachable_locations.append(location)
         return reachable_locations
@@ -125,7 +136,7 @@ class VNS:
                     locations=[start_location, end_location],
                     heading_samples=self.heading_samples,
                     distance_dict=self.distance_dict,
-                    T_max=self.T_max)
+                    T_max=self.T_initial)
         path1 = path.add_new_locations(locations_to_add)
         return path1
 
@@ -141,11 +152,15 @@ class VNS:
         r = generate_cutpoints(path.permutation, 2)
         location_idys_to_be_moved = path.permutation[r[0]:r[1]+1]
         location_idys_to_be_kept = [path.permutation[idx] for idx in range(0, len(path.permutation)) if idx not in range(r[0], r[1]+1)]
-        o = generate_cutpoints(location_idys_to_be_kept, 1)
+        if len(location_idys_to_be_kept) <= 2:
+            o = [0]
+        else:
+            o = generate_cutpoints(location_idys_to_be_kept, 1)
         for idx in range(0, len(location_idys_to_be_moved)):
-            location_idys_to_be_kept.insert(o[0]+idx, location_idys_to_be_moved[idx])
+            location_idys_to_be_kept.insert(o[0]+idx+1, location_idys_to_be_moved[idx])
         permutation1 = location_idys_to_be_kept
         locations1 = self.get_locations_from_permutation(permutation=permutation1)
+        print(permutation1)
         path1 = Path(permutation=permutation1,
                      locations=locations1,
                      heading_samples=self.heading_samples,
