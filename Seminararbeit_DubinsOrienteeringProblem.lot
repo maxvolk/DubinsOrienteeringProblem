@@ -1,7 +1,0 @@
-\babel@toc {ngerman}{}\relax 
-\contentsline {table}{\numberline {1}{\ignorespaces Parameter des DOP und der VNS und zugehörige Werte\relax }}{15}{table.caption.10}%
-\contentsline {table}{\numberline {2}{\ignorespaces Methoden der Implementierung der VNS nach Eigenanteilen an der Laufzeit. Set 1, $\rho = 1$, $T_{max} = 40$, $m = 8$\relax }}{15}{table.caption.11}%
-\contentsline {table}{\numberline {3}{\ignorespaces Beste mit der VNS (1000 Iterationen) gefundene Lösungen des DOP auf Set 1 und zugehörige Laufzeiten\relax }}{16}{table.caption.12}%
-\contentsline {table}{\numberline {4}{\ignorespaces Beste gefundene Lösungen von Penicka et al. \cite {R.Penicka.2017} für das DOP auf Set 1\relax }}{17}{table.caption.13}%
-\contentsline {table}{\numberline {5}{\ignorespaces Initial konstruierte Lösungen des DOP auf Set 1\relax }}{18}{table.caption.14}%
-\contentsline {table}{\numberline {6}{\ignorespaces Initial konstruierte Lösungen des DOP auf Set 1 mit relaxierter Bedingung an $I_r$\relax }}{19}{table.caption.15}%
